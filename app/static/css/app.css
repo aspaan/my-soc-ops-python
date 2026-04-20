@@ -1,3 +1,26 @@
+/* Unicorn Theme CSS - Enchanted Social Bingo */
+
+:root {
+    /* Unicorn Palette */
+    --unicorn-pink: #ffb6d9;
+    --unicorn-pink-light: #ffd6eb;
+    --unicorn-purple: #c4b5fd;
+    --unicorn-purple-light: #ede9fe;
+    --unicorn-lavender: #e9d5ff;
+    --unicorn-mint: #6ee7b7;
+    --unicorn-mint-light: #d1fae5;
+    --unicorn-sky: #7dd3fc;
+    --unicorn-sky-light: #e0f2fe;
+    --unicorn-yellow: #fef08a;
+    --unicorn-yellow-light: #fef9c3;
+    --unicorn-rainbow: linear-gradient(135deg, #ffb6d9, #c4b5fd, #7dd3fc, #6ee7b7, #fef08a);
+    --unicorn-rainbow-light: linear-gradient(135deg, #ffd6eb, #ede9fe, #e0f2fe, #d1fae5, #fef9c3);
+    
+    /* Magical accents */
+    --sparkle-white: #ffffff;
+    --magic-glow: rgba(255, 182, 217, 0.6);
+}
+
 html,
 body,
 #app {
@@ -50,15 +73,27 @@ body {
 .mb-8 { margin-bottom: 2rem; }
 .mx-auto { margin-left: auto; margin-right: auto; }
 
+/* Original colors (kept for compatibility) */
 .bg-white { background-color: #ffffff; }
 .bg-gray-50 { background-color: #f9fafb; }
 .bg-gray-100 { background-color: #f3f4f6; }
 .bg-amber-100 { background-color: #fef3c7; }
 .bg-amber-200 { background-color: #fde68a; }
-.bg-accent { background-color: #2563eb; }
+.bg-accent { background: linear-gradient(135deg, #f472b6 0%, #c084fc 50%, #818cf8 100%); }
 .bg-marked { background-color: #dcfce7; }
 .bg-black\/50 { background-color: rgba(0, 0, 0, 0.5); }
 
+/* Unicorn background colors */
+.bg-unicorn-pink { background-color: var(--unicorn-pink-light); }
+.bg-unicorn-purple { background-color: var(--unicorn-purple-light); }
+.bg-unicorn-mint { background-color: var(--unicorn-mint-light); }
+.bg-unicorn-sky { background-color: var(--unicorn-sky-light); }
+.bg-unicorn-yellow { background-color: var(--unicorn-yellow-light); }
+.bg-unicorn-rainbow { background: var(--unicorn-rainbow); }
+.bg-unicorn-gradient { background: linear-gradient(135deg, #ffd6eb 0%, #ede9fe 50%, #e0f2fe 100%); }
+.bg-magic { background: linear-gradient(180deg, #fff7ed 0%, #fdf4ff 100%); }
+
+/* Text colors */
 .text-white { color: #ffffff; }
 .text-gray-500 { color: #6b7280; }
 .text-gray-600 { color: #4b5563; }
@@ -70,6 +105,13 @@ body {
 .text-amber-500 { color: #f59e0b; }
 .text-amber-800 { color: #92400e; }
 .text-amber-900 { color: #78350f; }
+
+/* Unicorn text colors */
+.text-unicorn-pink { color: #ec4899; }
+.text-unicorn-purple { color: #9333ea; }
+.text-unicorn-mint { color: #059669; }
+.text-unicorn-sky { color: #0284c7; }
+.text-magical { background: var(--unicorn-rainbow); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 
 .text-xs { font-size: 0.75rem; line-height: 1rem; }
 .text-sm { font-size: 0.875rem; line-height: 1.25rem; }
@@ -91,12 +133,24 @@ body {
 .border-amber-400 { border-color: #fbbf24; }
 .border-marked-border { border-color: #22c55e; }
 
+/* Unicorn borders */
+.border-unicorn-pink { border-color: var(--unicorn-pink); }
+.border-unicorn-purple { border-color: var(--unicorn-purple); }
+.border-unicorn-mint { border-color: var(--unicorn-mint); }
+.border-unicorn-sky { border-color: var(--unicorn-sky); }
+.border-rainbow { border-image: var(--unicorn-rainbow) 1; }
+
 .rounded { border-radius: 0.25rem; }
 .rounded-lg { border-radius: 0.5rem; }
 .rounded-xl { border-radius: 0.75rem; }
+.rounded-full { border-radius: 9999px; }
 
+/* Unicorn shadows */
 .shadow-sm { box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); }
 .shadow-xl { box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
+.shadow-magic { box-shadow: 0 4px 20px rgba(255, 182, 217, 0.4), 0 2px 8px rgba(196, 181, 253, 0.3); }
+.shadow-sparkle { box-shadow: 0 0 15px rgba(255, 182, 217, 0.6), 0 0 30px rgba(196, 181, 253, 0.4); }
+.shadow-rainbow { box-shadow: 0 4px 20px rgba(255, 182, 217, 0.3), 0 0 0 2px var(--unicorn-purple), 0 0 0 4px var(--unicorn-sky), 0 0 0 6px var(--unicorn-mint); }
 
 .space-y-2 > * + * { margin-top: 0.5rem; }
 
@@ -116,6 +170,7 @@ body {
 .transition-all { transition-property: all; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
 .transition-colors { transition-property: color, background-color, border-color; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
 .duration-150 { transition-duration: 150ms; }
+.duration-300 { transition-duration: 300ms; }
 
 button:active .active\:bg-gray-100 { background-color: #f3f4f6; }
 button:active .active\:bg-accent-light { background-color: #3b82f6; }
@@ -147,6 +202,7 @@ button:disabled {
     min-height: 60px;
 }
 
+/* Animations */
 @keyframes bounce {
     0%, 100% {
         transform: translateY(-25%);
@@ -161,3 +217,138 @@ button:disabled {
 .animate-\[bounce_0\.5s_ease-out\] {
     animation: bounce 0.5s ease-out;
 }
+
+/* Sparkle animation */
+@keyframes sparkle {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(0.8) rotate(15deg);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(255, 182, 217, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 40px rgba(255, 182, 217, 0.7), 0 0 60px rgba(196, 181, 253, 0.5);
+    }
+}
+
+.animate-sparkle {
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+.animate-shimmer {
+    background: linear-gradient(90deg, var(--unicorn-pink), var(--unicorn-purple), var(--unicorn-sky), var(--unicorn-mint), var(--unicorn-yellow));
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: shimmer 3s linear infinite;
+}
+
+.animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Unicorn cell colors for bingo board */
+.bg-cell-0 { background-color: #ffd6eb; }
+.bg-cell-1 { background-color: #ede9fe; }
+.bg-cell-2 { background-color: #e0f2fe; }
+.bg-cell-3 { background-color: #d1fae5; }
+.bg-cell-4 { background-color: #fef9c3; }
+.bg-cell-5 { background-color: #fce7f3; }
+.bg-cell-6 { background-color: #e0e7ff; }
+.bg-cell-7 { background-color: #cffafe; }
+.bg-cell-8 { background-color: #dcfce7; }
+.bg-cell-9 { background-color: #fef3c7; }
+.bg-cell-10 { background-color: #fae8ff; }
+.bg-cell-11 { background-color: #f3e8ff; }
+.bg-cell-12 { background-color: #e0f2fe; }
+.bg-cell-13 { background-color: #ccfbf1; }
+.bg-cell-14 { background-color: #fef9c3; }
+.bg-cell-15 { background-color: #ffedd5; }
+.bg-cell-16 { background-color: #f0abfc; }
+.bg-cell-17 { background-color: #bae6fd; }
+.bg-cell-18 { background-color: #a7f3d0; }
+.bg-cell-19 { background-color: #fef08a; }
+.bg-cell-20 { background-color: #fbcfe8; }
+.bg-cell-21 { background-color: #c4b5fd; }
+.bg-cell-22 { background-color: #7dd3fc; }
+.bg-cell-23 { background-color: #6ee7b7; }
+.bg-cell-24 { background-color: #fef08a; }
+
+/* Winning cell highlight */
+.bg-winning {
+    background: var(--unicorn-rainbow) !important;
+    border-color: #f472b6 !important;
+}
+
+/* Marked cell styling */
+.bg-marked-unicorn {
+    background-color: var(--unicorn-mint-light) !important;
+    border-color: var(--unicorn-mint) !important;
+}
+
+/* Free space special styling */
+.bg-free-space {
+    background: linear-gradient(135deg, #fdf4ff 0%, #fae8ff 100%) !important;
+    border: 2px solid var(--unicorn-purple) !important;
+}
+
+/* Modal overlay */
+.bg-magic-overlay {
+    background: linear-gradient(135deg, rgba(255, 214, 235, 0.95) 0%, rgba(237, 233, 254, 0.95) 50%, rgba(224, 242, 254, 0.95) 100%);
+}
+
+/* Confetti */
+@keyframes confetti-fall {
+    0% {
+        transform: translateY(-100%) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    animation: confetti-fall 3s ease-out forwards;
+}
+
+.confetti-pink { background: var(--unicorn-pink); }
+.confetti-purple { background: var(--unicorn-purple); }
+.confetti-sky { background: var(--unicorn-sky); }
+.confetti-mint { background: var(--unicorn-mint); }
+.confetti-yellow { background: var(--unicorn-yellow); }

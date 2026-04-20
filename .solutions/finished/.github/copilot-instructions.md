@@ -47,6 +47,24 @@ Uses custom CSS utility classes (Tailwind-like) in `app/static/css/app.css`:
 - Spacing: `.p-4`, `.mb-2`, `.mx-auto`
 - Colors: `.bg-accent`, `.bg-marked`, `.text-gray-700`
 
+## Design Guide
+
+When creating or updating UI, follow these design rules:
+
+- Preserve the whimsical unicorn visual direction (pastel gradients, playful accents, celebratory tone)
+- Use CSS variables in `:root` for new colors and effects before introducing new utility classes
+- Prefer utility-class composition over one-off inline styles; only use inline styles for animation delays or dynamic values
+- Keep typography expressive but readable: clear hierarchy for headings, medium/high contrast for body text
+- Use motion intentionally: subtle sparkle/float/pulse effects, avoid excessive simultaneous animation
+- Maintain mobile-first layouts; ensure controls remain tappable and readable on small screens
+- Preserve existing HTMX flow and server-rendered structure in templates (`start_screen`, `game_screen`, `bingo_board`, `bingo_modal`)
+- Keep accessibility in mind: retain semantic elements, descriptive labels, and sufficient contrast for interactive content
+- Avoid introducing external UI frameworks or font dependencies unless explicitly requested
+
+For major visual changes, validate both game states:
+- Start screen
+- Active game with marked/winning squares and bingo modal
+
 ## State Management
 
 - `GameSession` manages game state server-side

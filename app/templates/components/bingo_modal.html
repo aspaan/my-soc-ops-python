@@ -1,15 +1,44 @@
-<div class="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
-    <div class="bg-white rounded-xl p-6 max-w-xs w-full text-center shadow-xl animate-[bounce_0.5s_ease-out]">
-        <div class="text-5xl mb-4">🎉</div>
-        <h2 class="text-3xl font-bold text-amber-500 mb-2">BINGO!</h2>
-        <p class="text-gray-600 mb-6">You completed a line!</p>
+<div class="fixed inset-0 bg-magic-overlay flex items-center justify-center p-4 z-50">
+    <!-- Confetti decorations -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <span class="confetti confetti-pink" style="left: 10%; animation-delay: 0s;"></span>
+        <span class="confetti confetti-purple" style="left: 25%; animation-delay: 0.2s;"></span>
+        <span class="confetti confetti-sky" style="left: 40%; animation-delay: 0.4s;"></span>
+        <span class="confetti confetti-mint" style="left: 55%; animation-delay: 0.1s;"></span>
+        <span class="confetti confetti-yellow" style="left: 70%; animation-delay: 0.3s;"></span>
+        <span class="confetti confetti-pink" style="left: 85%; animation-delay: 0.5s;"></span>
+    </div>
+    
+    <div class="bg-white rounded-2xl p-8 max-w-xs w-full text-center shadow-sparkle animate-[bounce_0.5s_ease-out] relative overflow-hidden">
+        <!-- Magical glow behind content -->
+        <div class="absolute inset-0 bg-unicorn-rainbow opacity-10"></div>
+        
+        <div class="relative z-10">
+            <!-- Sparkle emojis -->
+            <div class="flex justify-center gap-2 mb-2">
+                <span class="text-2xl animate-sparkle">✨</span>
+                <span class="text-3xl animate-float">🦄</span>
+                <span class="text-2xl animate-sparkle" style="animation-delay: 0.5s;">🌈</span>
+            </div>
+            
+            <div class="text-6xl mb-4">🎉</div>
+            <h2 class="text-4xl font-bold text-unicorn-purple mb-2 animate-shimmer">BINGO!</h2>
+            <p class="text-unicorn-pink font-semibold mb-6">✨ You completed a line! ✨</p>
 
-        <button
-            hx-post="/dismiss-modal"
-            hx-target="#game-container"
-            hx-swap="outerHTML"
-            class="w-full bg-accent text-white font-semibold py-3 px-6 rounded-lg active:bg-accent-light transition-colors">
-            Keep Playing
-        </button>
+            <button
+                hx-post="/dismiss-modal"
+                hx-target="#game-container"
+                hx-swap="outerHTML"
+                class="w-full bg-unicorn-rainbow text-white font-bold py-3 px-6 rounded-xl shadow-magic transition-all duration-300 hover:scale-105 active:scale-95">
+                🌟 Keep Playing 🌟
+            </button>
+            
+            <!-- More sparkles -->
+            <div class="mt-4 flex justify-center gap-3">
+                <span class="text-lg animate-sparkle">⭐</span>
+                <span class="text-lg animate-sparkle" style="animation-delay: 0.3s;">💫</span>
+                <span class="text-lg animate-sparkle" style="animation-delay: 0.6s;">✨</span>
+            </div>
+        </div>
     </div>
 </div>
